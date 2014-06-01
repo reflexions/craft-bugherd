@@ -53,41 +53,12 @@ class BugHerdPlugin extends BasePlugin
   {
 
     $settings = $this->getSettings();
-
     $showTab = craft()->bugHerd->checkAccess();
 
     if ($showTab)
     {
 
-      $user = craft()->userSession->getUser();
-
-      $bugherdCode = "<script type='text/javascript'>
-
-      var BugHerdConfig = {
-
-          metadata: {
-
-            logged_in: \"true\"
-          },
-
-          feedback: {
-            tab_text: \"".$settings->getAttribute('tabText')."\"
-          },
-
-          reporter: {
-            email: \"".$user->email."\",
-            required: \"true\"
-          }
-        };
-
-(function (d, t) {
-var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
-bh.type = 'text/javascript';
-bh.src = '//www.bugherd.com/sidebarv2.js?apikey=".$settings->getAttribute('projectKey')."';
-s.parentNode.insertBefore(bh, s);
-})(document, 'script');
-</script>";
-
+      $bugherdCode = craft()->bugHerd->buildCode();
       craft()->templates->includeFootHtml($bugherdCode);
 
     }
