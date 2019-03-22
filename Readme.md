@@ -1,19 +1,25 @@
-# Bugherd Plugin for Craft CMS
+# Intercom Plugin for Craft CMS 3.0
 
-A plugin to integrate bugherd into your Craft CMS.  Includes settings to automatically install bugherd in the control panel and/or the frontend of the site.
+A plugin to integrate Intercom into your Craft CMS Control Panel.  
 
-Works great as integrated support request system for your clients allowing them to submit issues in the front end or backend of the site without having separete bugherd logins.
+## Requirements
 
-## Usage
+This plugin requires Craft 3.0.0 or later.
 
-1. Setup your project in Bugherd
-2. Edit the project check the Enable public "Send Feedback" tab
-3. In the "Install Bugherd" setting copy the project key into the plugin settings.
-4. Select your visibilty settings
-5. If you want to enable to tab on the front end of your site as well as the backend make sure to include { getFootHtml() }} in your layout templates
+## Installation
+
+1. Open your Terminal and go to your Craft project.
+
+`cd /path/to/project`
+
+2. Then tell Composer to load the plugin
+
+`composer require reflexions/intercom`
+
+3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Intercom.
 
 ## Settings
-Includes settings to
-* Change the tab text
-* Show the tab on the front end or just in the control panel
-* Show the tab to all site visitors or just logged in users with control panel access.
+
+- `App Id`: You Intercom application Id.
+- `Secret Key`: Your Intercom secret key.
+- `User Group`: The User Group for whom Intercom will display. Leave blank for all users.

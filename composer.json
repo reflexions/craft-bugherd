@@ -1,0 +1,41 @@
+{
+    "name": "reflexions/intercom",
+    "description": "Intergrate Intercom with the Craft CP",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "intercom"
+    ],
+    "support": {
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "reflexions",
+            "homepage": "http://reflexions.co"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "reflexions\\intercom\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Intercom",
+        "handle": "intercom",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "changelogUrl": "???",
+        "components": {
+            "intercomService": "reflexions\\intercom\\services\\IntercomService"
+        },
+        "class": "reflexions\\intercom\\Intercom"
+    }
+}

@@ -1,0 +1,30 @@
+{% import "_includes/forms" as forms %}
+<h3>Settings</h3>
+{{ forms.textField({
+    first: true,
+    label: "App Id",
+    instructions: "",
+    name: 'appId',
+    required: true,
+    value: settings.appId,
+    size: 33
+}) }}
+{{ forms.textField({
+  first: true,
+  label: "Secret Key",
+  instructions: "for encoding the email addresses",
+  name: 'secretKey',
+  required: true,
+  value: settings.secretKey,
+  size: 33
+}) }}
+{{ forms.textField({
+  first: true,
+  label: "Group Handle",
+  instructions: "handle of the usergroup you want to monitor in intercom, blank will default to monitor all users",
+  name: 'groupHandle',
+  required: true,
+  value: settings.groupHandle,
+  size: 33
+}) }}
+
